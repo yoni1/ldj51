@@ -10,14 +10,14 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     private float moveHorizontal;
     private float moveVertical;
-    
+
+    private GameObject player;
     
     // Start is called before the first frame update
     void Start()
     {
         
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        
         moveSpeead = 3f;
         jumpForce = 60f;
         isJumping = false;
@@ -34,6 +34,15 @@ public class PlayerController : MonoBehaviour
     {
         if (moveHorizontal != 0)
         {
+            if (moveHorizontal < 0)
+            {
+                gameObject.transform.localScale = new Vector2(1, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector2(-1, 1);
+            }
+
             rb2D.AddForce(new Vector2(moveHorizontal * moveSpeead, 0), ForceMode2D.Impulse);
         }
 
