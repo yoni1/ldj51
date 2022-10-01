@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width={{{ WIDTH }}} height={{{ HEIGHT }}}></canvas>
+      <canvas id="unity-canvas"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -110,9 +110,27 @@
 #endif
       loadingBar.style.display = "block";
 
+      config.devicePixelRatio = 1;
+
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
+        document.body.onresize = () => {
+          var factor = 0.1; // minimum possible
+          var pixelWidth = window.innerWidth * window.devicePixelRatio;
+          var pixelHeight = window.innerHeight * window.devicePixelRatio;
+          for (var i = 10; i > 1; i--)
+          {
+            if (pixelWidth >= 188 * i && pixelHeight >= 92 * i)
+            {
+              factor = 0.1 * i;
+              break;
+            }
+          }
+          document.body.style.zoom = factor / window.devicePixelRatio;
+        };
+        document.body.onresize();
+
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
