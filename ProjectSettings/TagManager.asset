@@ -46,3 +46,6 @@ TagManager:
   - name: background
     uniqueID: 899551983
     locked: 0
+  - name: Door
+    uniqueID: 4209906107
+    locked: 0
