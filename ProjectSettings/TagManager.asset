@@ -40,11 +40,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 899551983
+    locked: 0
+  - name: Room
+    uniqueID: 279205361
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: background
-    uniqueID: 899551983
+  - name: People
+    uniqueID: 1691003677
     locked: 0
   - name: Door
     uniqueID: 4209906107
