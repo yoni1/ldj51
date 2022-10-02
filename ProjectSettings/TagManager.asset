@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Platform
   - aThing
+  - Zilla
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -57,4 +59,7 @@ TagManager:
     locked: 0
   - name: HUD
     uniqueID: 808644519
+    locked: 0
+  - name: DeathOverlay
+    uniqueID: 3176391719
     locked: 0
