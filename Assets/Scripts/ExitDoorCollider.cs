@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrangeCollider : MonoBehaviour
+public class ExitDoorCollider : MonoBehaviour
 {
     public VirtualCameraController vCamController;
     public GameObject teleportDestination;
