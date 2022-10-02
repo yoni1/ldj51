@@ -6,7 +6,6 @@ public class OrangeCollider : MonoBehaviour
 {
     public GameObject currentVCamera;
     public GameObject nextVCamera;
-    public AudioSource audioData;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +13,6 @@ public class OrangeCollider : MonoBehaviour
         {
             currentVCamera.SetActive(false);
             nextVCamera.SetActive(true);
-            audioData.Play();
         }
     }
 }
