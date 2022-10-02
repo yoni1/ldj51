@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 96031426}
   - component: {fileID: 96031425}
   m_Layer: 0
-  m_Name: orange
+  m_Name: ExitDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3397,7 +3397,7 @@ GameObject:
   - component: {fileID: 1663537583}
   - component: {fileID: 1663537582}
   m_Layer: 0
-  m_Name: orange (1)
+  m_Name: ExitDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3524,7 +3524,7 @@ GameObject:
   - component: {fileID: 1758784841}
   - component: {fileID: 1758784840}
   m_Layer: 0
-  m_Name: orange (2)
+  m_Name: ExitDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
