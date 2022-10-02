@@ -1659,7 +1659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0004286766, y: 0.0006585121, z: -10}
+  m_LocalPosition: {x: 0.00043058395, y: 0.0006585121, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4563,10 +4563,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2.45
-  m_LinearDrag: 5
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 10
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3e72b5072175b9a4c96a623e1c6176a7, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -4601,8 +4601,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathOverlay: {fileID: 0}
   rb2D: {fileID: 2005774369}
-  moveSpeed: 5
-  jumpForce: 100
+  moveSpeed: 2.75
+  jumpForce: 85
   animator: {fileID: 2005774374}
 --- !u!61 &2005774372
 BoxCollider2D:
