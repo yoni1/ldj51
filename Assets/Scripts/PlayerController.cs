@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     public DeathOverlayFader deathOverlay;
 
-    private Rigidbody2D rb2D;
+    public Rigidbody2D rb2D;
 
     private FloorController currentFloor;
 
@@ -15,8 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool isOnPlatform;
     private float moveHorizontal;
     private float moveVertical;
-
-    private GameObject player;
+    private bool _faceRight;
 
     public Animator animator;
 
@@ -25,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         currentFloor = GameObject.Find("Floor0")
             .GetComponent<FloorController>();
-        rb2D = gameObject.GetComponent<Rigidbody2D>();
+        isJumping = false;
     }
 
     // Update is called once per frame
@@ -39,17 +38,16 @@ public class PlayerController : MonoBehaviour
     {
         if (moveHorizontal != 0)
         {
+            if (moveHorizontal < 0 && _faceRight)
+            {
+                Flip();
+            }
+            else if (moveHorizontal > 0 && !_faceRight)
+            {   
+                Flip();
+            }
+            
             animator.SetBool("IsRunning", true);
-
-            if (moveHorizontal < 0)
-            {
-                gameObject.transform.localScale = new Vector2(1, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector2(-1, 1);
-            }
-
             rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0), ForceMode2D.Impulse);
         }
         else
@@ -86,16 +84,21 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Platform"))
         {
-            isOnPlatform = false;
+            if (col.gameObject.CompareTag("Platform"))
+            {
+                isJumping = true;
+                animator.SetBool("IsJumping", true);
+            }
         }
     }
 
-    public void SetFloor(FloorController floor)
+    private void Flip()
     {
-        currentFloor = floor;
+        _faceRight = !_faceRight;
+        transform.Rotate(0f, 180f, 0f);
     }
+    
 
     public void resetCurrentFloor()
     {

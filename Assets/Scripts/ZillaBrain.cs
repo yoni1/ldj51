@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ZillaBrain : MonoBehaviour
 {
-    public float zillaOffset;
-
     private int nextFloorToDestroy = 0;
     private float zillaOffset = 14.0f;
     private float zillaInitY = 1.087444f;
