@@ -4561,10 +4561,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2.45
-  m_LinearDrag: 5
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 10
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3e72b5072175b9a4c96a623e1c6176a7, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -4598,6 +4598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathOverlay: {fileID: 1797679224}
+  moveSpeed: 2.75
+  jumpForce: 85
   animator: {fileID: 2005774374}
 --- !u!61 &2005774372
 BoxCollider2D:
