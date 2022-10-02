@@ -3,11 +3,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb2D;
+    public DeathOverlayFader deathOverlay;
+
+    public Rigidbody2D rb2D;
+
+    private FloorController currentFloor;
 
     public float moveSpeed;
     public float jumpForce;
     private bool isJumping;
+    private bool isOnPlatform;
     private float moveHorizontal;
     private float moveVertical;
     private bool _faceRight;
@@ -17,10 +22,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        rb2D = gameObject.GetComponent<Rigidbody2D>();
-        moveSpeed = 3f;
-        jumpForce = 50f;
+        currentFloor = GameObject.Find("Floor0")
+            .GetComponent<FloorController>();
         isJumping = false;
     }
 
@@ -35,18 +38,12 @@ public class PlayerController : MonoBehaviour
     {
         if (moveHorizontal != 0)
         {
-
             if (moveHorizontal < 0 && _faceRight)
             {
-                Debug.Log(moveHorizontal);
-                Debug.Log(_faceRight);
                 Flip();
             }
             else if (moveHorizontal > 0 && !_faceRight)
             {   
-                Debug.Log(moveHorizontal);
-                Debug.Log(_faceRight);
-                Debug.Log("Flop Horizonal <0 ");
                 Flip();
             }
             
@@ -58,19 +55,30 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsRunning", false);
         }
 
-        if (!isJumping && moveVertical > 0)
+        if (isOnPlatform && !isJumping && moveVertical > 0)
         {
-            rb2D.AddForce(new Vector2(0, moveVertical * jumpForce), ForceMode2D.Impulse);
+            isJumping = true;
+            animator.SetBool("IsJumping", true);
+            rb2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
     }
 
-    void OnCollisionEnter2D (Collision2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log(col.gameObject.name);
+        Debug.Log("PLAYER COLLIDED WITH: " + col.gameObject.name);
         if (col.gameObject.CompareTag("Platform"))
         {
-            isJumping = false;
-            animator.SetBool("IsJumping", false);
+            isOnPlatform = true;
+
+            if (isJumping)
+            {
+                isJumping = false;
+                animator.SetBool("IsJumping", false);
+            }
+        }
+        else if (col.gameObject.CompareTag("Zilla"))
+        {
+            deathOverlay.Death();
         }
     }
 
@@ -91,4 +99,9 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
     
+
+    public void resetCurrentFloor()
+    {
+        currentFloor.ResetPositions();
+    }
 }

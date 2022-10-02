@@ -11,6 +11,7 @@ public class PurpleController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             zillaBrain.Chomp();
+            //deathOverlay.Play("DeathOverlayFadeIn");
         }
     }
 }

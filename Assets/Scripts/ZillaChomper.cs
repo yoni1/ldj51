@@ -24,16 +24,26 @@ public class ZillaChomper : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Zilla"))
+        print("Chomper collided with: " + collision.gameObject.name);
+        if (collision.collider.CompareTag("Zilla"))
         {
             isChomping = false;
+        }
+        else if (collision.collider.CompareTag("Wall"))
+        {
+            collision.gameObject.SetActive(false);
         }
     }
 
     public void Chomp()
     {
         isChomping = true;
+    }
+
+    public void StopChomping()
+    {
+        isChomping = false;
     }
 }

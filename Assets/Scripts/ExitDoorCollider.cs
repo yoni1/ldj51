@@ -7,7 +7,7 @@ public class ExitDoorCollider : MonoBehaviour
     public VirtualCameraController vCamController;
     public GameObject teleportDestination;
     public GameObject player;
-
+    public ZillaBrain zillaBrain;
     private bool isTriggering;
 
     private void Start()
