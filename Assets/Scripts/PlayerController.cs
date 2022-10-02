@@ -5,21 +5,23 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2D;
 
-    private float moveSpeead;
+    private float moveSpeed;
     private float jumpForce;
     private bool isJumping;
     private float moveHorizontal;
     private float moveVertical;
 
     private GameObject player;
-    
+
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        moveSpeead = 3f;
-        jumpForce = 60f;
+        moveSpeed = 3f;
+        jumpForce = 50f;
         isJumping = false;
     }
 
@@ -34,6 +36,8 @@ public class PlayerController : MonoBehaviour
     {
         if (moveHorizontal != 0)
         {
+            animator.SetBool("IsRunning", true);
+
             if (moveHorizontal < 0)
             {
                 gameObject.transform.localScale = new Vector2(1, 1);
@@ -43,7 +47,11 @@ public class PlayerController : MonoBehaviour
                 gameObject.transform.localScale = new Vector2(-1, 1);
             }
 
-            rb2D.AddForce(new Vector2(moveHorizontal * moveSpeead, 0), ForceMode2D.Impulse);
+            rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0), ForceMode2D.Impulse);
+        }
+        else
+        {
+            animator.SetBool("IsRunning", false);
         }
 
         if (!isJumping && moveVertical > 0)
@@ -58,6 +66,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("Platform"))
         {
             isJumping = false;
+            animator.SetBool("IsJumping", false);
         }
     }
 
@@ -67,6 +76,7 @@ public class PlayerController : MonoBehaviour
             if (col.gameObject.CompareTag("Platform"))
             {
                 isJumping = true;
+                animator.SetBool("IsJumping", true);
             }
         }
     }
