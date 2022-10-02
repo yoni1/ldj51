@@ -9,9 +9,10 @@ public class PlayerController : MonoBehaviour
 
     private FloorController currentFloor;
 
-    private float moveSpeed;
-    private float jumpForce;
+    public float moveSpeed;
+    public float jumpForce;
     private bool isJumping;
+    private bool isOnPlatform;
     private float moveHorizontal;
     private float moveVertical;
 
@@ -25,9 +26,6 @@ public class PlayerController : MonoBehaviour
         currentFloor = GameObject.Find("Floor0")
             .GetComponent<FloorController>();
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        moveSpeed = 3f;
-        jumpForce = 50f;
-        isJumping = false;
     }
 
     // Update is called once per frame
@@ -59,19 +57,26 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsRunning", false);
         }
 
-        if (!isJumping && moveVertical > 0)
+        if (isOnPlatform && !isJumping && moveVertical > 0)
         {
-            rb2D.AddForce(new Vector2(0, moveVertical * jumpForce), ForceMode2D.Impulse);
+            isJumping = true;
+            animator.SetBool("IsJumping", true);
+            rb2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
     }
 
-    void OnCollisionEnter2D (Collision2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log("PLAYER COLLIDED WITH: " + col.gameObject.name);
         if (col.gameObject.CompareTag("Platform"))
         {
-            isJumping = false;
-            animator.SetBool("IsJumping", false);
+            isOnPlatform = true;
+
+            if (isJumping)
+            {
+                isJumping = false;
+                animator.SetBool("IsJumping", false);
+            }
         }
         else if (col.gameObject.CompareTag("Zilla"))
         {
@@ -81,12 +86,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D col)
     {
+        if (col.gameObject.CompareTag("Platform"))
         {
-            if (col.gameObject.CompareTag("Platform"))
-            {
-                isJumping = true;
-                animator.SetBool("IsJumping", true);
-            }
+            isOnPlatform = false;
         }
     }
 

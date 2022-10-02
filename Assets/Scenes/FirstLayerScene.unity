@@ -4598,6 +4598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathOverlay: {fileID: 1797679224}
+  moveSpeed: 3
+  jumpForce: 72
   animator: {fileID: 2005774374}
 --- !u!61 &2005774372
 BoxCollider2D:
