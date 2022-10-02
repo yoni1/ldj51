@@ -8,7 +8,7 @@ public class VirtualCameraController : MonoBehaviour
     public GameObject camConfiner0;
     public GameObject camConfiner1;
     public GameObject camConfiner2;
-    public float floorOffset = 10.42f;
+    public float floorOffset = 9.2f;
 
     private List<GameObject> vCamConfiners;
     private int currentCamIdx;
@@ -60,8 +60,6 @@ public class VirtualCameraController : MonoBehaviour
         updateCamPriorities(currentCamIdx);
 
         // Move the camera after the next one to prepare it for the next switch
-        float nextCamY = vCamConfiners[currentCamIdx].transform.position.y -
-            floorOffset;
         vCamConfiners[nextCamIdx(currentCamIdx)].transform.Translate(new Vector3(0f, -2 * floorOffset, 0f));
     }
 }
