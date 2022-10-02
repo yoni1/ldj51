@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class OrangeCollider : MonoBehaviour
 {
-    public GameObject currentVCamera;
-    public GameObject nextVCamera;
+    public VirtualCameraController vCamController;
+    public GameObject teleportDestination;
+    public GameObject player;
+
+    private bool isTriggering;
+
+    private void Start()
+    {
+        isTriggering = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!isTriggering && collision.CompareTag("Player"))
         {
-            currentVCamera.SetActive(false);
-            nextVCamera.SetActive(true);
+            vCamController.NextFloor();
+            isTriggering = true;
+            player.transform.position = teleportDestination.transform.position;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (isTriggering && collision.CompareTag("Player"))
+        {
+            isTriggering = false;
         }
     }
 }
