@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D col)
     {
-        Debug.Log(col.gameObject.name);
+        Debug.Log("PLAYER COLLIDED WITH: " + col.gameObject.name);
         if (col.gameObject.CompareTag("Platform"))
         {
             isJumping = false;

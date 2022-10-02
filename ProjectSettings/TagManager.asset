@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Platform
   - aThing
+  - Zilla
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 51371557}
   m_Layer: 8
   m_Name: WallW (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 86783404}
   m_Layer: 8
   m_Name: WallE (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -602,7 +602,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1858734567}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &154624360
 GameObject:
@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 210991512}
   m_Layer: 8
   m_Name: WallW
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -901,7 +901,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1858734567}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &210991512
 Rigidbody2D:
@@ -1006,7 +1006,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294817136
 GameObject:
@@ -1718,7 +1718,7 @@ GameObject:
   - component: {fileID: 588921731}
   m_Layer: 6
   m_Name: ZillaL
-  m_TagString: Untagged
+  m_TagString: Zilla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1844,7 +1844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588921729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.840162, y: 1.087444, z: 0.1855049}
+  m_LocalPosition: {x: -15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2079,7 +2079,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1858734567}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &748865389
 GameObject:
@@ -2130,7 +2130,7 @@ Transform:
   - {fileID: 154624364}
   - {fileID: 369849696}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &755314003
 GameObject:
@@ -2161,6 +2161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e9b7a5964f4417faf8de6999f00541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zillaOffset: 15
   zillaR: {fileID: 869931029}
   zillaL: {fileID: 588921730}
 --- !u!4 &755314005
@@ -2171,7 +2172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755314003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75983816, y: -1.087444, z: -0.1855049}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2194,7 +2195,7 @@ GameObject:
   - component: {fileID: 809659459}
   m_Layer: 8
   m_Name: WallE
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2290,7 +2291,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1858734567}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &809659459
 Rigidbody2D:
@@ -2328,7 +2329,7 @@ GameObject:
   - component: {fileID: 869931026}
   m_Layer: 6
   m_Name: ZillaR
-  m_TagString: Untagged
+  m_TagString: Zilla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2341,7 +2342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869931024}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.3598385, y: 1.087444, z: 0.1855049}
+  m_LocalPosition: {x: 15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2543,7 +2544,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &886357420
 GameObject:
@@ -2837,7 +2838,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1396362808
 GameObject:
@@ -2973,7 +2974,7 @@ GameObject:
   - component: {fileID: 1514182948}
   m_Layer: 8
   m_Name: WallW (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3106,7 +3107,7 @@ GameObject:
   - component: {fileID: 1606186666}
   m_Layer: 8
   m_Name: WallE (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3724,7 +3725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1796625156}
   m_Layer: 0
-  m_Name: DeathOverlay
+  m_Name: Death Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3755,6 +3756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1797458877}
+  - component: {fileID: 1797458878}
   m_Layer: 0
   m_Name: Floor2
   m_TagString: Untagged
@@ -3780,8 +3782,20 @@ Transform:
   - {fileID: 1201525832}
   - {fileID: 1758784843}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1797458878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797458876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac9ccd957a694491a32cfb09a4dcc6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1797679220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,7 +3806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797679221}
   - component: {fileID: 1797679223}
-  - component: {fileID: 1797679222}
+  - component: {fileID: 1797679224}
   m_Layer: 0
   m_Name: DeathOverlay
   m_TagString: Untagged
@@ -3815,26 +3829,6 @@ Transform:
   m_Father: {fileID: 1796625156}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1797679222
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797679220}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fe12daa597b07467fa960b44d03c69bd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &1797679223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3887,6 +3881,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1797679224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797679220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ff3461502a048ae841ef24c3b896ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeInTime: 0.8
+  fadeOutTime: 0.4
+  zillaBrain: {fileID: 755314004}
+  player: {fileID: 2005774365}
 --- !u!1 &1820128343
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,6 +3995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1858734567}
+  - component: {fileID: 1858734568}
   m_Layer: 0
   m_Name: Floor0
   m_TagString: Untagged
@@ -4005,14 +4016,25 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 329106573}
-  - {fileID: 2005774368}
   - {fileID: 210991511}
   - {fileID: 809659458}
   - {fileID: 612740504}
   - {fileID: 96031428}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1858734568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858734566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac9ccd957a694491a32cfb09a4dcc6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1876346029
 GameObject:
   m_ObjectHideFlags: 0
@@ -4022,6 +4044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1876346030}
+  - component: {fileID: 1876346031}
   m_Layer: 0
   m_Name: Floor1
   m_TagString: Untagged
@@ -4047,8 +4070,20 @@ Transform:
   - {fileID: 407179073}
   - {fileID: 1663537585}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1876346031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876346029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac9ccd957a694491a32cfb09a4dcc6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1887591189
 GameObject:
   m_ObjectHideFlags: 0
@@ -4448,8 +4483,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 886357421}
-  m_Father: {fileID: 1858734567}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2005774369
 Rigidbody2D:
@@ -4500,6 +4535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7173feaae5a14343ba5a91c38b95b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathOverlay: {fileID: 1797679224}
   animator: {fileID: 2005774374}
 --- !u!61 &2005774372
 BoxCollider2D:
@@ -4765,7 +4801,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2107885514
 GameObject:
