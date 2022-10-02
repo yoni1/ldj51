@@ -5,13 +5,12 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2D;
 
-    private float moveSpeed;
-    private float jumpForce;
+    public float moveSpeed;
+    public float jumpForce;
     private bool isJumping;
     private float moveHorizontal;
     private float moveVertical;
-
-    private GameObject player;
+    private bool _faceRight;
 
     public Animator animator;
 
@@ -36,17 +35,22 @@ public class PlayerController : MonoBehaviour
     {
         if (moveHorizontal != 0)
         {
+
+            if (moveHorizontal < 0 && _faceRight)
+            {
+                Debug.Log(moveHorizontal);
+                Debug.Log(_faceRight);
+                Flip();
+            }
+            else if (moveHorizontal > 0 && !_faceRight)
+            {   
+                Debug.Log(moveHorizontal);
+                Debug.Log(_faceRight);
+                Debug.Log("Flop Horizonal <0 ");
+                Flip();
+            }
+            
             animator.SetBool("IsRunning", true);
-
-            if (moveHorizontal < 0)
-            {
-                gameObject.transform.localScale = new Vector2(1, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector2(-1, 1);
-            }
-
             rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0), ForceMode2D.Impulse);
         }
         else
@@ -80,4 +84,11 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void Flip()
+    {
+        _faceRight = !_faceRight;
+        transform.Rotate(0f, 180f, 0f);
+    }
+    
 }
