@@ -3,7 +3,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public DeathOverlayFader deathOverlay;
+
     private Rigidbody2D rb2D;
+
+    private FloorController currentFloor;
 
     private float moveSpeed;
     private float jumpForce;
@@ -18,7 +22,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentFloor = GameObject.Find("Floor0")
+            .GetComponent<FloorController>();
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         moveSpeed = 3f;
         jumpForce = 50f;
@@ -68,6 +73,10 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
             animator.SetBool("IsJumping", false);
         }
+        else if (col.gameObject.CompareTag("Zilla"))
+        {
+            deathOverlay.Death();
+        }
     }
 
     private void OnCollisionExit2D(Collision2D col)
@@ -79,5 +88,15 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("IsJumping", true);
             }
         }
+    }
+
+    public void SetFloor(FloorController floor)
+    {
+        currentFloor = floor;
+    }
+
+    public void resetCurrentFloor()
+    {
+        currentFloor.ResetPositions();
     }
 }
