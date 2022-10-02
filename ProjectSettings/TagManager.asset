@@ -17,7 +17,7 @@ TagManager:
   - Floors
   - Walls
   - Player
-  - 
+  - HUD
   - 
   - 
   - 
@@ -54,4 +54,7 @@ TagManager:
     locked: 0
   - name: Door
     uniqueID: 4209906107
+    locked: 0
+  - name: HUD
+    uniqueID: 808644519
     locked: 0
