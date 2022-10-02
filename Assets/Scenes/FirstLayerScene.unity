@@ -511,6 +511,7 @@ MonoBehaviour:
   vCamController: {fileID: 748865390}
   teleportDestination: {fileID: 2066164372}
   player: {fileID: 2005774365}
+  zillaBrain: {fileID: 755314004}
 --- !u!61 &96031426
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1627,7 +1628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00043058395, y: 0.0006585121, z: -10}
+  m_LocalPosition: {x: 0.00043439865, y: 0.0006585121, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2161,7 +2162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e9b7a5964f4417faf8de6999f00541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zillaOffset: 15
   zillaR: {fileID: 869931029}
   zillaL: {fileID: 588921730}
 --- !u!4 &755314005
@@ -3420,6 +3420,7 @@ MonoBehaviour:
   vCamController: {fileID: 748865390}
   teleportDestination: {fileID: 232007887}
   player: {fileID: 2005774365}
+  zillaBrain: {fileID: 755314004}
 --- !u!61 &1663537583
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3546,7 +3547,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vCamController: {fileID: 748865390}
   teleportDestination: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 2005774365}
+  zillaBrain: {fileID: 755314004}
 --- !u!61 &1758784841
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3928,7 +3930,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1118575577
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 73b730e40906541ee8250e2ca7df611c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -4597,9 +4599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7173feaae5a14343ba5a91c38b95b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathOverlay: {fileID: 1797679224}
-  moveSpeed: 2.75
-  jumpForce: 85
   animator: {fileID: 2005774374}
 --- !u!61 &2005774372
 BoxCollider2D:

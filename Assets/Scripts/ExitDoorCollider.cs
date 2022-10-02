@@ -7,7 +7,7 @@ public class ExitDoorCollider : MonoBehaviour
     public VirtualCameraController vCamController;
     public GameObject teleportDestination;
     public GameObject player;
-
+    public ZillaBrain zillaBrain;
     private bool isTriggering;
 
     private void Start()
@@ -25,6 +25,7 @@ public class ExitDoorCollider : MonoBehaviour
             player.GetComponent<PlayerController>().SetFloor(
                 teleportDestination.transform.parent.gameObject.
                 GetComponent<FloorController>());
+            zillaBrain.resetZilla(true);
         }
     }
 
