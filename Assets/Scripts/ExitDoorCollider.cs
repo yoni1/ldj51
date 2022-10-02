@@ -22,6 +22,10 @@ public class ExitDoorCollider : MonoBehaviour
             vCamController.NextFloor();
             isTriggering = true;
             player.transform.position = teleportDestination.transform.position;
+            // player.GetComponent<PlayerController>().SetFloor(
+            //     teleportDestination.transform.parent.gameObject.
+            //     GetComponent<FloorController>());
+            zillaBrain.resetZilla(true);
         }
     }
 
