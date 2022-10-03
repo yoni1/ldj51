@@ -10,9 +10,17 @@ public class DeathOverlayFader : MonoBehaviour
 
     public PlayerController player;
 
+    private AudioSource deathAudio;
+
+    private void Start()
+    {
+        deathAudio = GetComponent<AudioSource>();
+    }
+
     IEnumerator fadeIn(SpriteRenderer sprite)
     {
         print("Doing dem fade in");
+        deathAudio.Play();
         Color tmpColor = sprite.color;
         tmpColor.a = 0;
         while (tmpColor.a < 1f)
