@@ -5,11 +5,13 @@ using UnityEngine;
 public class ObjectState
 {
     public Vector3 position;
+    public Quaternion rotation;
     public bool isEnabled;
 
-    public ObjectState(Vector3 position, bool isEnabled)
+    public ObjectState(Vector3 position, Quaternion rotation, bool isEnabled)
     {
         this.position = position;
+        this.rotation = rotation;
         this.isEnabled = isEnabled;
     }
 }
@@ -29,7 +31,7 @@ public class FloorController : MonoBehaviour
             GameObject curObject = transform.GetChild(i).gameObject;
             objectStates.Add(curObject.GetInstanceID(),
                 new ObjectState(
-                    curObject.transform.position, curObject.activeSelf));
+                    curObject.transform.position, curObject.transform.rotation, curObject.activeSelf));
             Rigidbody2D curRb = curObject.GetComponent<Rigidbody2D>();
             if (curRb != null && curObject.layer == FURNITURE_LAYER)
             {
@@ -83,12 +85,16 @@ public class FloorController : MonoBehaviour
                 ObjectState originalState = objectStates[
                     curObject.GetInstanceID()];
                 curObject.transform.position = originalState.position;
+                curObject.transform.rotation = originalState.rotation;
                 curObject.SetActive(originalState.isEnabled);
             }
             Rigidbody2D curRb = curObject.GetComponent<Rigidbody2D>();
             if (curRb != null && curObject.layer == FURNITURE_LAYER)
             {
                 curRb.bodyType = RigidbodyType2D.Kinematic;
+                curRb.gravityScale = 0;
+                curRb.velocity = Vector3.zero;
+                curRb.Sleep(); // https://stackoverflow.com/questions/58914962/rigidbody-not-stopping-instantly-when-setting-its-velocity-to-0
             }
         }
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Bullet"))

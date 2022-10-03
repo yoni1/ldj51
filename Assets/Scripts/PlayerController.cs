@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isBeingSwallowed;
     private bool movingSceneStarted;
-    private static readonly int FURNITURE_LAYER = 20;
-
     public Animator animator;
 
     // Start is called before the first frame update
