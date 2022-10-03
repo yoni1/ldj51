@@ -11,7 +11,7 @@ public class IntroCutsceneController : MonoBehaviour
     {
         if (Input.GetKeyDown("space") || !dialog.isPlaying)
         {
-            SceneManager.LoadScene("FirstLayerScene");
+            SceneManager.LoadScene("Building");
         }
     }
 }
