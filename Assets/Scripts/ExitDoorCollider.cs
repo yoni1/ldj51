@@ -25,7 +25,7 @@ public class ExitDoorCollider : MonoBehaviour
             // player.GetComponent<PlayerController>().SetFloor(
             //     teleportDestination.transform.parent.gameObject.
             //     GetComponent<FloorController>());
-            zillaBrain.resetZilla(true);
+            zillaBrain.Chomp();
         }
     }
 

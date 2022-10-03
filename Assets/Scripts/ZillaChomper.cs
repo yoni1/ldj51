@@ -22,6 +22,11 @@ public class ZillaChomper : MonoBehaviour
             rigidBody.AddForce(new Vector2(directionMultiplier * speed, 0f),
                 ForceMode2D.Force);
         }
+        else
+        {
+            rigidBody.velocity = Vector2.zero;
+            rigidBody.angularVelocity = 0f;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

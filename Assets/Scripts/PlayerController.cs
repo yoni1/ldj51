@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        print("PLAYER faceRight is now: " + _faceRight);
         if (moveHorizontal != 0)
         {
             if (moveHorizontal < 0 && _faceRight)
