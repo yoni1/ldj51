@@ -18,6 +18,8 @@ public class FloorController : MonoBehaviour
 {
     private Dictionary<int, ObjectState> objectStates;
 
+    private static readonly int FURNITURE_LAYER = 20;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,24 @@ public class FloorController : MonoBehaviour
             objectStates.Add(curObject.GetInstanceID(),
                 new ObjectState(
                     curObject.transform.position, curObject.activeSelf));
+            Rigidbody2D curRb = curObject.GetComponent<Rigidbody2D>();
+            if (curRb != null && curObject.layer == FURNITURE_LAYER)
+            {
+                curRb.bodyType = RigidbodyType2D.Kinematic;
+            }
+        }
+    }
+
+    public void MakeFurnitureMovable()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            GameObject curObject = transform.GetChild(i).gameObject;
+            Rigidbody2D curRb = curObject.GetComponent<Rigidbody2D>();
+            if (curRb != null && curObject.layer == FURNITURE_LAYER)
+            {
+                curRb.bodyType = RigidbodyType2D.Dynamic;
+            }
         }
     }
 
@@ -41,9 +61,11 @@ public class FloorController : MonoBehaviour
                     curObject.GetInstanceID()];
                 curObject.transform.position = originalState.position;
                 curObject.SetActive(originalState.isEnabled);
-            } else
+            }
+            Rigidbody2D curRb = curObject.GetComponent<Rigidbody2D>();
+            if (curRb != null && curObject.layer == FURNITURE_LAYER)
             {
-                Destroy(curObject);
+                curRb.bodyType = RigidbodyType2D.Kinematic;
             }
         }
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Bullet"))

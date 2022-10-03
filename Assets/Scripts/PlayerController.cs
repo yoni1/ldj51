@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private bool _faceRight;
     private AudioSource jumpAudio;
 
+    private static readonly int FURNITURE_LAYER = 20;
+
     public Animator animator;
 
     // Start is called before the first frame update
@@ -88,12 +90,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D col)
     {
+        if (col.gameObject.CompareTag("Platform"))
         {
-            if (col.gameObject.CompareTag("Platform"))
-            {
-                isJumping = true;
-                animator.SetBool("IsJumping", true);
-            }
+            isJumping = true;
+            animator.SetBool("IsJumping", true);
         }
     }
 
