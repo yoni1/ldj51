@@ -85,6 +85,14 @@ public class FloorController : MonoBehaviour
         exitDoor.GetComponent<ExitDoorCollider>().UseExitDoor();
     }
 
+    public AudioSource GetNewMusic(){
+        Transform music = findChild("Music");
+        if (!music) {
+            return null;
+        }
+        return music.GetComponent<AudioSource>();
+    }
+
 
     public void ResetPositions()
     {

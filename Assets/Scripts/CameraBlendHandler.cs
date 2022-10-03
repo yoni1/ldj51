@@ -13,11 +13,14 @@ public class CameraBlendHandler : MonoBehaviour
     private CinemachineBrain brain;
     private bool currentlyBlending;
 
+    private AudioSource bgMusic;
+
     // Start is called before the first frame update
     void Start()
     {
         brain = GetComponent<CinemachineBrain>();
         currentlyBlending = false;
+        UpdateMusic();
     }
 
     void SuccessMoveToNextFloor(){
@@ -25,11 +28,28 @@ public class CameraBlendHandler : MonoBehaviour
         player.SetActive(true);
         zillaBrain.resetZilla(true);
         zillaBrain.GetFloorController().VoiceAnnounce(); // Only announces on the first load
+        UpdateMusic();
         if (zillaBrain.isBuildingBotttom()){
             player.GetComponent<PlayerController>().setIsBeingSwallowed();
         }
     }
     
+    void UpdateMusic(){
+        AudioSource newMusic = zillaBrain.GetFloorController().GetNewMusic();
+
+        if (!newMusic)
+        {
+            return;
+        }
+
+        if (bgMusic) 
+        {
+            bgMusic.Stop();
+        }
+
+        bgMusic = newMusic;
+        bgMusic.Play();
+    }
     // Update is called once per frame
     void Update()
     {
