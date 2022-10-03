@@ -9,22 +9,23 @@ public class ZillaBrain : MonoBehaviour
     private float floorSize = 9.2f;
     public ZillaChomper zillaR;
     public ZillaChomper zillaL;
+    private bool isChomping;
     //public Collider2D ignoredCollider;
 
     private IEnumerator TimerCoroutine() {
         while (true) {
             yield return new WaitForSeconds(10.0f);
-            Chomp();
         }
     }
 
     private void TimerRestart(){
-        StopCoroutine( "TimerCoroutine");
+        StopCoroutine("TimerCoroutine");
         StartCoroutine("TimerCoroutine");
     }
 
     public void Start()
     {
+        isChomping = false;
         StartCoroutine("TimerCoroutine");
 
         //Physics2D.IgnoreCollision(
@@ -39,9 +40,12 @@ public class ZillaBrain : MonoBehaviour
     }
 
     public void Chomp()
-    {   
-        zillaR.Chomp();
-        zillaL.Chomp();
+    {
+        if (!isChomping)
+        {
+            zillaR.Chomp();
+            zillaL.Chomp();
+        }
     }
 
 
@@ -51,6 +55,7 @@ public class ZillaBrain : MonoBehaviour
             nextFloorToDestroy ++;
         }
 
+        isChomping = false;
         TimerRestart();
         zillaR.StopChomping();
         zillaL.StopChomping();
