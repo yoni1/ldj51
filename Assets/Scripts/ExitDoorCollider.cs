@@ -37,12 +37,10 @@ public class ExitDoorCollider : MonoBehaviour
 
     private void UseExitDoor()
     {
-        vCamController.NextFloor();
-        Vector3 teleportDestination = zillaBrain.GetNextSpawnLocation();
-        player.transform.position = teleportDestination;
-        // player.GetComponent<PlayerController>().SetFloor(
-        //     teleportDestination.transform.parent.gameObject.
-        //     GetComponent<FloorController>());
+        if (gameObject.name != "SceneExitDoor") {
+            vCamController.NextFloor();
+            player.transform.position = zillaBrain.GetNextSpawnLocation();
+        }
         zillaBrain.Chomp();
     }
 }

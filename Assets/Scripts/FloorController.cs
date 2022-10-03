@@ -51,14 +51,27 @@ public class FloorController : MonoBehaviour
         }
     }
     
-    public Vector3 GetRelativeSpawnLocation(){
+    private Transform findChild(string childName)
+    {
         foreach (Transform child in transform) {
-            if (child.name == "SpawnPoint") {
-                return child.transform.position;
+            if (child.name == childName) {
+                return child;
             }
         }
-        print("ERROR - could not find spawn point child object for floor.");
+        return null;
+    }
+    
+    public Vector3 GetRelativeSpawnLocation(){
+        Transform child = findChild("SpawnPoint");
+        if (child) {
+            return child.transform.position;
+        }
+        print("ERROR - could not find child object for floor called SpawnPoint");
         return new Vector3(0,0,0);
+    }
+
+    public bool hasSceneExitDoor(){
+        return findChild("SceneExitDoor") ? true : false;
     }
 
     public void ResetPositions()
@@ -87,7 +100,7 @@ public class FloorController : MonoBehaviour
     public void VoiceAnnounce()
     {
         AudioSource announement = GetComponent<AudioSource>();
-        print(announement);
+        //print(announement);
         if (announement != null) {
             announement.Play();
         }

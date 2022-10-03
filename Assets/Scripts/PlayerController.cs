@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private bool _faceRight;
     private AudioSource jumpAudio;
 
+    private bool isBeingSwallowed;
+    private bool movingSceneStarted;
     private static readonly int FURNITURE_LAYER = 20;
 
     public Animator animator;
@@ -67,6 +69,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void setIsBeingSwallowed(){
+        isBeingSwallowed = true;
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         //Debug.Log("PLAYER COLLIDED WITH: " + col.gameObject.name);
@@ -77,7 +83,14 @@ public class PlayerController : MonoBehaviour
         }
         else if (col.gameObject.CompareTag("Zilla"))
         {
-            deathOverlay.Death();
+            if (isBeingSwallowed && (!movingSceneStarted)){
+                    movingSceneStarted = true;
+                    print("Move Scene");
+                    //TODO: Move scene here. Make sure we reset isBeingSwallowed after moving. Also note - this happens twice (once per chomper)
+            } else 
+            {
+                deathOverlay.Death();
+            }
         }
     }
 
@@ -101,5 +114,6 @@ public class PlayerController : MonoBehaviour
         // We don't need to Flip() because the death overlay already sets
         // rotation to 0 when it sets the position (maybe do that here?)
         _faceRight = false;
+        isBeingSwallowed = false;
     }
 }

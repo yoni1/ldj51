@@ -25,6 +25,9 @@ public class CameraBlendHandler : MonoBehaviour
         player.SetActive(true);
         zillaBrain.resetZilla(true);
         zillaBrain.GetFloorController().VoiceAnnounce(); // Only announces on the first load
+        if (zillaBrain.isBuildingBotttom()){
+            player.GetComponent<PlayerController>().setIsBeingSwallowed();
+        }
     }
     
     // Update is called once per frame

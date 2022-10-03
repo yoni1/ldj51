@@ -92,4 +92,8 @@ public class ZillaBrain : MonoBehaviour
         }
     }
 
+    public bool isBuildingBotttom(){
+        return GetFloorController().hasSceneExitDoor();
+    }
+
 }
