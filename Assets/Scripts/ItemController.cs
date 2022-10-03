@@ -11,7 +11,7 @@ public class ItemController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             ItemManager.OnPickedUp(ItemTag);
         }
     }

@@ -46,5 +46,9 @@ public class FloorController : MonoBehaviour
                 Destroy(curObject);
             }
         }
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Bullet"))
+        {
+            Destroy(obj);
+        }
     }
 }

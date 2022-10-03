@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
         currentFloor = GameObject.Find("Floor0")
             .GetComponent<FloorController>();
         isJumping = false;
+        _faceRight = false;
     }
 
     // Update is called once per frame
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        print("PLAYER faceRight is now: " + _faceRight);
         if (moveHorizontal != 0)
         {
             if (moveHorizontal < 0 && _faceRight)
@@ -98,10 +100,12 @@ public class PlayerController : MonoBehaviour
         _faceRight = !_faceRight;
         transform.Rotate(0f, 180f, 0f);
     }
-    
 
-    public void resetCurrentFloor()
+    // Called on respawn to reset how the player looks
+    public void ResetPlayer()
     {
-        currentFloor.ResetPositions();
+        // We don't need to Flip() because the death overlay already sets
+        // rotation to 0 when it sets the position (maybe do that here?)
+        _faceRight = false;
     }
 }
