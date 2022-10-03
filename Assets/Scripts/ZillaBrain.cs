@@ -15,6 +15,7 @@ public class ZillaBrain : MonoBehaviour
     private IEnumerator TimerCoroutine() {
         while (true) {
             yield return new WaitForSeconds(10.0f);
+            Chomp();
         }
     }
 
@@ -43,6 +44,7 @@ public class ZillaBrain : MonoBehaviour
     {
         if (!isChomping)
         {
+            isChomping = true;
             zillaR.Chomp();
             zillaL.Chomp();
         }

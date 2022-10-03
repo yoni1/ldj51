@@ -8,7 +8,7 @@ public class DeathOverlayFader : MonoBehaviour
     public float fadeOutTime;
     public ZillaBrain zillaBrain;
 
-    public GameObject player;
+    public PlayerController player;
 
     IEnumerator fadeIn(SpriteRenderer sprite)
     {
@@ -45,7 +45,7 @@ public class DeathOverlayFader : MonoBehaviour
             yield return null;
         }
         print("Done with the fadeout");
-        player.SetActive(true);
+        player.gameObject.SetActive(true);
         sprite.color = tmpColor;
     }
 
@@ -59,11 +59,12 @@ public class DeathOverlayFader : MonoBehaviour
         GameObject.Find("Floor0").GetComponent<FloorController>().ResetPositions();
         print("Calling dat fadeout");
         StartCoroutine(fadeOut(GetComponent<SpriteRenderer>()));
+        player.ResetPlayer();
     }
 
     public void Death()
     {
-        player.SetActive(false);
+        player.gameObject.SetActive(false);
         StartCoroutine(fadeIn(GetComponent<SpriteRenderer>()));
     }
 
