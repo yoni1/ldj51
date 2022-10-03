@@ -60,6 +60,7 @@ public class ZillaBrain : MonoBehaviour
 
     public void Chomp()
     {
+        GetComponent<AudioSource>().Play();
         if (!isChomping)
         {
             GetFloorController().MakeFurnitureMovable();

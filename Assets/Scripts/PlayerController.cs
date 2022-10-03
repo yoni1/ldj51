@@ -81,10 +81,14 @@ public class PlayerController : MonoBehaviour
         }
         else if (col.gameObject.CompareTag("Zilla"))
         {
-            if (isBeingSwallowed && (!movingSceneStarted)){
+            if (isBeingSwallowed) 
+            {
+                if (!movingSceneStarted)
+                {
                     movingSceneStarted = true;
                     print("Move Scene");
                     //TODO: Move scene here. Make sure we reset isBeingSwallowed after moving. Also note - this happens twice (once per chomper)
+                }
             } else 
             {
                 deathOverlay.Death();
