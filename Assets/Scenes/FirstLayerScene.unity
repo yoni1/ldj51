@@ -510,7 +510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vCamController: {fileID: 748865390}
   teleportDestination: {fileID: 2066164372}
-  player: {fileID: 0}
+  player: {fileID: 2005774365}
   zillaBrain: {fileID: 755314004}
 --- !u!61 &96031426
 BoxCollider2D:
@@ -598,7 +598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96031424}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.12, y: -1.9105979, z: 0}
+  m_LocalPosition: {x: -1.04, y: -1.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -785,8 +785,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161371892}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.84, y: -1.91, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.04, y: 0.56, z: 0}
+  m_LocalScale: {x: 1, y: 0.3528, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1858734567}
@@ -1734,7 +1734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65ff9952abec47fa99990287721e349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2005774365}
+  zillaBrain: {fileID: 755314004}
 --- !u!1 &588921729
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,7 +3420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vCamController: {fileID: 748865390}
   teleportDestination: {fileID: 232007887}
-  player: {fileID: 0}
+  player: {fileID: 2005774365}
   zillaBrain: {fileID: 755314004}
 --- !u!61 &1663537583
 BoxCollider2D:
@@ -3547,7 +3548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vCamController: {fileID: 748865390}
   teleportDestination: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 2005774365}
   zillaBrain: {fileID: 755314004}
 --- !u!61 &1758784841
 BoxCollider2D:
@@ -3958,7 +3959,7 @@ MonoBehaviour:
   fadeInTime: 0.8
   fadeOutTime: 0.4
   zillaBrain: {fileID: 755314004}
-  player: {fileID: 2005774365}
+  player: {fileID: 2005774371}
 --- !u!1 &1820128343
 GameObject:
   m_ObjectHideFlags: 0

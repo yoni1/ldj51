@@ -8,6 +8,8 @@ TagManager:
   - aThing
   - Zilla
   - Wall
+  - Undefined
+  - Bullet
   layers:
   - Default
   - TransparentFX

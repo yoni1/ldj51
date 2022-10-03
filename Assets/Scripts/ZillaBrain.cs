@@ -44,6 +44,7 @@ public class ZillaBrain : MonoBehaviour
     {
         if (!isChomping)
         {
+            resetZilla(false);
             isChomping = true;
             zillaR.Chomp();
             zillaL.Chomp();

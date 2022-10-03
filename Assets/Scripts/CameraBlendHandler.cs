@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class CameraBlendHandler : MonoBehaviour
 {
     public GameObject player;
+    public ZillaBrain zillaBrain;
 
     private CinemachineBrain brain;
     private bool currentlyBlending;
@@ -31,6 +32,7 @@ public class CameraBlendHandler : MonoBehaviour
         {
             currentlyBlending = false;
             player.SetActive(true);
+            zillaBrain.resetZilla(true);
         }
     }
 }
