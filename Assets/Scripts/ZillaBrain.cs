@@ -5,8 +5,7 @@ using UnityEngine;
 public class ZillaBrain : MonoBehaviour
 {
     private int nextFloorToDestroy = 0;
-    private float zillaOffset = 14.0f;
-    private float zillaInitY = 1.087444f;
+    private float zillaOffset = 15.0f;
     private float floorSize = 9.2f;
     public ZillaChomper zillaR;
     public ZillaChomper zillaL;
@@ -56,7 +55,7 @@ public class ZillaBrain : MonoBehaviour
         zillaR.StopChomping();
         zillaL.StopChomping();
 
-        float newY = zillaInitY - nextFloorToDestroy * floorSize;
+        float newY = - nextFloorToDestroy * floorSize;
         Debug.Log(newY);
 
         zillaR.transform.SetLocalPositionAndRotation(
