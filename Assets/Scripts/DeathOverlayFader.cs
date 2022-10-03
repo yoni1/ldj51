@@ -60,12 +60,11 @@ public class DeathOverlayFader : MonoBehaviour
     private void DoFadeOut()
     {
         zillaBrain.resetZilla();
-        // TODO: Get the player's start position from the state obj
-        player.transform.SetLocalPositionAndRotation(
-            new Vector3(7.02f, -1.36f, 0f), Quaternion.identity);
-        // TODO: Get the current floor's object from the state thing
-        GameObject.Find("Floor0").GetComponent<FloorController>().ResetPositions();
-        print("Calling dat fadeout");
+
+        player.transform.SetLocalPositionAndRotation(zillaBrain.GetNextSpawnLocation(), Quaternion.identity);       
+
+        zillaBrain.GetFloorController().ResetPositions();
+        
         StartCoroutine(fadeOut(GetComponent<SpriteRenderer>()));
         player.ResetPlayer();
     }

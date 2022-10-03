@@ -33,7 +33,7 @@ public class ZillaChomper : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("Chomper collided with: " + collision.gameObject.name);
+        //print("Chomper collided with: " + collision.gameObject.name);
         if (collision.collider.CompareTag("Zilla"))
         {
             isChomping = false;

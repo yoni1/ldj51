@@ -50,6 +50,16 @@ public class FloorController : MonoBehaviour
             }
         }
     }
+    
+    public Vector3 GetRelativeSpawnLocation(){
+        foreach (Transform child in transform) {
+            if (child.name == "SpawnPoint") {
+                return child.transform.position;
+            }
+        }
+        print("ERROR - could not find spawn point child object for floor.");
+        return new Vector3(0,0,0);
+    }
 
     public void ResetPositions()
     {

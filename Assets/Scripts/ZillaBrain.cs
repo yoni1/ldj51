@@ -40,17 +40,25 @@ public class ZillaBrain : MonoBehaviour
         return nextFloorToDestroy;
     }
 
-    public FloorController GetCurrentFloorController()
+    public FloorController GetFloorController(int floorOffset = 0)  
     {
-        string currFloorId = "Floor" + (GetNextFloorToDestroy());
+        string currFloorId = "Floor" + (GetNextFloorToDestroy() + floorOffset);
+        //print("Found current floor " + currFloorId);
         return GameObject.Find(currFloorId).GetComponent<FloorController>();
+    }
+
+    public Vector3 GetNextSpawnLocation()
+    {
+        Vector3 relativeSpawn = GetFloorController(1).GetRelativeSpawnLocation();
+        //print("relativeSpawn = " + relativeSpawn);
+        return relativeSpawn;
     }
 
     public void Chomp()
     {
         if (!isChomping)
         {
-            GetCurrentFloorController().MakeFurnitureMovable();
+            GetFloorController().MakeFurnitureMovable();
             resetZilla(false);
             isChomping = true;
             zillaR.Chomp();
@@ -58,26 +66,26 @@ public class ZillaBrain : MonoBehaviour
         }
     }
 
+    private float CalcNextFloorY(int floorOffset = 0){
+        return - (nextFloorToDestroy + floorOffset ) * floorSize;
+    }
 
     public void resetZilla(bool isToNextFloor = false)
     {
-        if (isToNextFloor) {
-            nextFloorToDestroy ++;
-        }
-
         isChomping = false;
         TimerRestart();
         zillaR.StopChomping();
         zillaL.StopChomping();
 
-        float newY = - nextFloorToDestroy * floorSize;
-        Debug.Log(newY);
-
         zillaR.transform.SetLocalPositionAndRotation(
-            new Vector3(zillaOffset, newY, zillaR.transform.position.z), Quaternion.identity);
+            new Vector3(zillaOffset, CalcNextFloorY(), zillaR.transform.position.z), Quaternion.identity);
 
         zillaL.transform.SetLocalPositionAndRotation(
-            new Vector3(-zillaOffset, newY, zillaL.transform.position.z), Quaternion.identity);
+            new Vector3(-zillaOffset, CalcNextFloorY(), zillaL.transform.position.z), Quaternion.identity);
+        
+        if (isToNextFloor) {
+            nextFloorToDestroy ++;
+        }
     }
 
 }

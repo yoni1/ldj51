@@ -5,7 +5,6 @@ using UnityEngine;
 public class ExitDoorCollider : MonoBehaviour
 {
     public VirtualCameraController vCamController;
-    public GameObject teleportDestination;
     public GameObject player;
     public ZillaBrain zillaBrain;
     private bool isTriggering;
@@ -19,9 +18,11 @@ public class ExitDoorCollider : MonoBehaviour
     {
         if (!isTriggering && collision.CompareTag("Player"))
         {
+            
             vCamController.NextFloor();
             isTriggering = true;
-            player.transform.position = teleportDestination.transform.position;
+            Vector3 teleportDestination = zillaBrain.GetNextSpawnLocation();
+            player.transform.position = teleportDestination;
             // player.GetComponent<PlayerController>().SetFloor(
             //     teleportDestination.transform.parent.gameObject.
             //     GetComponent<FloorController>());
