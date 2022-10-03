@@ -5,15 +5,15 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     public HUDSidepanelController sidepanel;
-    public bool hasTempItem;
+    public bool hasStepOnPpl;
 
     public void OnPickedUp(string ItemTag)
     {
         sidepanel.ShowItem(ItemTag);
 
-        if (ItemTag == "Temp_Item")
+        if (ItemTag == "StepOnPpl")
         {
-            hasTempItem = true;
+            hasStepOnPpl = true;
         }
     }
 }
