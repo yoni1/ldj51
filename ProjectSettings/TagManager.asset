@@ -59,6 +59,9 @@ TagManager:
   - name: Door
     uniqueID: 4209906107
     locked: 0
+  - name: Zilla
+    uniqueID: 4183035611
+    locked: 0
   - name: HUD
     uniqueID: 808644519
     locked: 0
