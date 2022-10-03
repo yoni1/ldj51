@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class HUDSidepanelController : MonoBehaviour
 {
-    public SpriteRenderer TempItemRenderer;
+    public SpriteRenderer StepOnPplRenderer;
 
     public void ShowItem(string ItemTag)
     {
-        if (ItemTag == "Temp_Item")
+        if (ItemTag == "StepOnPpl")
         {
-            TempItemRenderer.enabled = true;
+            StepOnPplRenderer.enabled = true;
         }
     }
 }
