@@ -5,7 +5,7 @@ using UnityEngine;
 public class ZillaBrain : MonoBehaviour
 {
     private int nextFloorToDestroy = 0;
-    private float zillaOffset = 15.0f;
+    private float zillaOffset = 17.0f;
     private float floorSize = 9.2f;
     public ZillaChomper zillaR;
     public ZillaChomper zillaL;
