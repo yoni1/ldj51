@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8596837402299660736}
   - component: {fileID: 8596837402299660739}
   - component: {fileID: 8596837402299660738}
+  - component: {fileID: 8350234040932348980}
   m_Layer: 0
   m_Name: Employee Left
   m_TagString: Untagged
@@ -127,3 +128,19 @@ MonoBehaviour:
   facingLeft: 0
   punchPower: 10
   itemManager: {fileID: 0}
+--- !u!111 &8350234040932348980
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8596837402299660740}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 755796bf91cdd634b95b9542242affb2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 755796bf91cdd634b95b9542242affb2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
