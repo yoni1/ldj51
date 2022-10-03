@@ -41,6 +41,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        animator.SetBool("IsJumping", rb2D.velocity.y > 0.01);
+        animator.SetBool("IsFalling", rb2D.velocity.y < -0.01);
+        animator.SetBool("IsRunning", moveHorizontal != 0);
+
         if (moveHorizontal != 0)
         {
             if (moveHorizontal < 0 && _faceRight)
@@ -52,18 +56,12 @@ public class PlayerController : MonoBehaviour
                 Flip();
             }
             
-            animator.SetBool("IsRunning", true);
             rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0), ForceMode2D.Impulse);
-        }
-        else
-        {
-            animator.SetBool("IsRunning", false);
         }
 
         if (isOnPlatform && !isJumping && moveVertical > 0)
         {
             isJumping = true;
-            animator.SetBool("IsJumping", true);
             rb2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             jumpAudio.Play();
         }
@@ -75,12 +73,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("Platform"))
         {
             isOnPlatform = true;
-
-            if (isJumping)
-            {
-                isJumping = false;
-                animator.SetBool("IsJumping", false);
-            }
+            isJumping = false;
         }
         else if (col.gameObject.CompareTag("Zilla"))
         {
@@ -93,7 +86,6 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("Platform"))
         {
             isJumping = true;
-            animator.SetBool("IsJumping", true);
         }
     }
 
