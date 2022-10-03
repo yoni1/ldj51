@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitDoorCollider : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class ExitDoorCollider : MonoBehaviour
 
     public void UseExitDoor()
     {
+        if (gameObject.name == "WinExitDoor") {
+            SceneManager.LoadScene("Win");
+        }
         if (gameObject.name != "SceneExitDoor") {
             vCamController.NextFloor();
             player.transform.position = zillaBrain.GetNextSpawnLocation();

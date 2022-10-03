@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -94,8 +95,9 @@ public class PlayerController : MonoBehaviour
                 if (!movingSceneStarted)
                 {
                     movingSceneStarted = true;
-                    print("Move Scene");
-                    //TODO: Move scene here. Make sure we reset isBeingSwallowed after moving. Also note - this happens twice (once per chomper)
+                    
+                    //print("Move Scene");
+                    SceneManager.LoadScene("Stomach");
                 }
             } else 
             {
