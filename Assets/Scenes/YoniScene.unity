@@ -2465,7 +2465,7 @@ GameObject:
   - component: {fileID: 923271497}
   - component: {fileID: 923271498}
   - component: {fileID: 923271499}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Chair
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -3174,7 +3174,7 @@ GameObject:
   - component: {fileID: 1596638053}
   - component: {fileID: 1596638052}
   - component: {fileID: 1596638051}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Chair (1)
   m_TagString: Platform
   m_Icon: {fileID: 0}

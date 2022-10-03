@@ -10,6 +10,8 @@ public class ZillaChomper : MonoBehaviour
     public int directionMultiplier;
     public int speed = 6000000;
 
+    private static readonly int FURNITURE_LAYER = 20;
+
     void Start()
     {
         rigidBody = gameObject.GetComponent<Rigidbody2D>();

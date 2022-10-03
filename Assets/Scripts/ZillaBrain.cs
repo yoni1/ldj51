@@ -40,10 +40,17 @@ public class ZillaBrain : MonoBehaviour
         return nextFloorToDestroy;
     }
 
+    public FloorController GetCurrentFloorController()
+    {
+        string currFloorId = "Floor" + (GetNextFloorToDestroy());
+        return GameObject.Find(currFloorId).GetComponent<FloorController>();
+    }
+
     public void Chomp()
     {
         if (!isChomping)
         {
+            GetCurrentFloorController().MakeFurnitureMovable();
             resetZilla(false);
             isChomping = true;
             zillaR.Chomp();
