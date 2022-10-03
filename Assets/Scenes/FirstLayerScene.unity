@@ -3958,7 +3958,7 @@ MonoBehaviour:
   fadeInTime: 0.8
   fadeOutTime: 0.4
   zillaBrain: {fileID: 755314004}
-  player: {fileID: 0}
+  player: {fileID: 2005774365}
 --- !u!1 &1820128343
 GameObject:
   m_ObjectHideFlags: 0
@@ -4599,7 +4599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7173feaae5a14343ba5a91c38b95b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathOverlay: {fileID: 0}
+  deathOverlay: {fileID: 1797679224}
   rb2D: {fileID: 2005774369}
   moveSpeed: 2.75
   jumpForce: 85
