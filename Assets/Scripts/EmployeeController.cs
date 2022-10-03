@@ -78,7 +78,7 @@ public class EmployeeController : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(
                 new Vector2(0, Mathf.Sqrt(2) * playerController.jumpForce),
                 ForceMode2D.Impulse);
-            GetComponent<AudioSource>().Play();
+            //GetComponent<AudioSource>().Play();
         }
     }
 
