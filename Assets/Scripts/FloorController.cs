@@ -76,6 +76,16 @@ public class FloorController : MonoBehaviour
         return findChild("SceneExitDoor") ? true : false;
     }
 
+    public void SkipLevel(){
+        Transform exitDoor = findChild("ExitDoor");
+        if (!exitDoor)
+        {
+        exitDoor = findChild("SceneExitDoor");
+        }
+        exitDoor.GetComponent<ExitDoorCollider>().UseExitDoor();
+    }
+
+
     public void ResetPositions()
     {
         for (int i = 0; i < transform.childCount; i++) {

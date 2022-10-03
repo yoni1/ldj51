@@ -97,4 +97,13 @@ public class ZillaBrain : MonoBehaviour
         return GetFloorController().hasSceneExitDoor();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown("p"))
+        {
+            GetFloorController().SkipLevel();
+        }   
+    }
+
+
 }

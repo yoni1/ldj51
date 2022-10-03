@@ -35,7 +35,7 @@ public class ExitDoorCollider : MonoBehaviour
         }   
     }
 
-    private void UseExitDoor()
+    public void UseExitDoor()
     {
         if (gameObject.name != "SceneExitDoor") {
             vCamController.NextFloor();
