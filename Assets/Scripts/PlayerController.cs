@@ -94,6 +94,10 @@ public class PlayerController : MonoBehaviour
                 deathOverlay.Death();
             }
         }
+        else if (col.gameObject.CompareTag("Hazard"))
+        {
+            deathOverlay.Death();
+        }
     }
 
     private void OnCollisionExit2D(Collision2D col)
