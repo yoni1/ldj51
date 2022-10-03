@@ -61,7 +61,7 @@ public class DeathOverlayFader : MonoBehaviour
     {
         zillaBrain.resetZilla();
 
-        player.transform.SetLocalPositionAndRotation(zillaBrain.GetNextSpawnLocation(), Quaternion.identity);       
+        player.transform.SetLocalPositionAndRotation(zillaBrain.GetCurrentSpawnLocation(), Quaternion.identity);       
 
         zillaBrain.GetFloorController().ResetPositions();
         

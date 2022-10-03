@@ -49,9 +49,13 @@ public class ZillaBrain : MonoBehaviour
 
     public Vector3 GetNextSpawnLocation()
     {
-        Vector3 relativeSpawn = GetFloorController(1).GetRelativeSpawnLocation();
-        //print("relativeSpawn = " + relativeSpawn);
-        return relativeSpawn;
+        return GetFloorController(1).GetRelativeSpawnLocation();
+    }
+
+
+    public Vector3 GetCurrentSpawnLocation()
+    {
+        return GetFloorController(0).GetRelativeSpawnLocation();
     }
 
     public void Chomp()
