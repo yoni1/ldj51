@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: a45c7d66a487eef42b493434a5669c8b
   - enabled: 1
-    path: Assets/Scenes/Win.unity
-    guid: bee07e41ec5c69e488e50f9498c21535
+    path: Assets/Scenes/IntroCutscene.unity
+    guid: 3ce1065ba22c3f34ba2d2f3ba825af95
   - enabled: 1
     path: Assets/Scenes/Building.unity
     guid: 45ee24c5adfa46b4aa157debe479000e
+  - enabled: 1
+    path: Assets/Scenes/Stomach.unity
+    guid: 9de57e0462d70aa4bb788dbd403a4b5a
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: bee07e41ec5c69e488e50f9498c21535
   m_configObjects: {}
