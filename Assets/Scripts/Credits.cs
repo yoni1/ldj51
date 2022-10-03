@@ -16,8 +16,10 @@ public class Credits : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-         float offset = Time.time * scrollSpeed;
-         //rend.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));        
-        transform.position = new Vector3(0, offset, 0);
+        float offset = Time.time * scrollSpeed - 8;
+        //rend.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));        
+        if (offset < 0){
+            transform.position = new Vector3(0, offset, 0);
+        }
     }
 }
