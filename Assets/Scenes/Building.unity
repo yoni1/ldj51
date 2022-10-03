@@ -15416,7 +15416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754530684340332613, guid: 7240ea61ab01c4bc6826e08250b6f6b6, type: 3}
       propertyPath: m_Name
-      value: ExitDoor
+      value: SceneExitDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7240ea61ab01c4bc6826e08250b6f6b6, type: 3}
