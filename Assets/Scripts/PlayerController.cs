@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private float moveHorizontal;
     private float moveVertical;
     private bool _faceRight;
+    private AudioSource jumpAudio;
 
     public Animator animator;
 
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
             .GetComponent<FloorController>();
         isJumping = false;
         _faceRight = false;
+        jumpAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -61,6 +63,7 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
             animator.SetBool("IsJumping", true);
             rb2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            jumpAudio.Play();
         }
     }
 
