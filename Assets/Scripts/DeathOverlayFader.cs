@@ -19,7 +19,7 @@ public class DeathOverlayFader : MonoBehaviour
 
     IEnumerator fadeIn(SpriteRenderer sprite)
     {
-        print("Doing dem fade in");
+        //print("Doing dem fade in");
         deathAudio.Play();
         Color tmpColor = sprite.color;
         tmpColor.a = 0;
@@ -33,7 +33,7 @@ public class DeathOverlayFader : MonoBehaviour
             }
             yield return null;
         }
-        print("Done with the fadein");
+        //print("Done with the fadein");
         sprite.color = tmpColor;
         Invoke("DoFadeOut", 1f);
     }
@@ -52,7 +52,7 @@ public class DeathOverlayFader : MonoBehaviour
             }
             yield return null;
         }
-        print("Done with the fadeout");
+        //print("Done with the fadeout");
         player.gameObject.SetActive(true);
         sprite.color = tmpColor;
     }

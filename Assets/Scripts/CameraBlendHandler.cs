@@ -20,6 +20,13 @@ public class CameraBlendHandler : MonoBehaviour
         currentlyBlending = false;
     }
 
+    void SuccessMoveToNextFloor(){
+        currentlyBlending = false;
+        player.SetActive(true);
+        zillaBrain.resetZilla(true);
+        zillaBrain.GetFloorController().VoiceAnnounce(); // Only announces on the first load
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -30,9 +37,7 @@ public class CameraBlendHandler : MonoBehaviour
         }
         else if (currentlyBlending && !brain.IsBlending)
         {
-            currentlyBlending = false;
-            player.SetActive(true);
-            zillaBrain.resetZilla(true);
+            SuccessMoveToNextFloor();
         }
     }
 }

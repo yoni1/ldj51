@@ -83,4 +83,14 @@ public class FloorController : MonoBehaviour
             Destroy(obj);
         }
     }
+
+    public void VoiceAnnounce()
+    {
+        AudioSource announement = GetComponent<AudioSource>();
+        print(announement);
+        if (announement != null) {
+            announement.Play();
+        }
+    }
+
 }
