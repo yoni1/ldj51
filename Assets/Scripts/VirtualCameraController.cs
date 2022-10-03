@@ -51,15 +51,20 @@ public class VirtualCameraController : MonoBehaviour
 
     public void NextFloor()
     {
+        print("Going to next floor, disabling cam: " + currentCamIdx);
         vCamConfiners[currentCamIdx].transform.GetChild(0).gameObject.
             SetActive(false);
 
         currentCamIdx = nextCamIdx(currentCamIdx);
+        print("Current camIdx is now: " + currentCamIdx);
         vCamConfiners[currentCamIdx].transform.GetChild(0).gameObject.
             SetActive(true);
+        print("Set that can to active");
         updateCamPriorities(currentCamIdx);
 
+        print("Moving camera at index: " + nextCamIdx(currentCamIdx) + " cur position: " + vCamConfiners[nextCamIdx(currentCamIdx)].transform.position);
         // Move the camera after the next one to prepare it for the next switch
-        vCamConfiners[nextCamIdx(currentCamIdx)].transform.Translate(new Vector3(0f, -2 * floorOffset, 0f));
+        vCamConfiners[nextCamIdx(currentCamIdx)].transform.Translate(new Vector3(0f, -3f * floorOffset, 0f));
+        print("New position: " + vCamConfiners[nextCamIdx(currentCamIdx)].transform.position);
     }
 }
