@@ -57,16 +57,20 @@ public class DeathOverlayFader : MonoBehaviour
         sprite.color = tmpColor;
     }
 
-    private void DoFadeOut()
-    {
+    public void RestartLevel(){
         zillaBrain.resetZilla();
 
         player.transform.SetLocalPositionAndRotation(zillaBrain.GetCurrentSpawnLocation(), Quaternion.identity);       
 
         zillaBrain.GetFloorController().ResetPositions();
-        
-        StartCoroutine(fadeOut(GetComponent<SpriteRenderer>()));
         player.ResetPlayer();
+        
+    }
+
+    private void DoFadeOut()
+    {
+        RestartLevel();
+        StartCoroutine(fadeOut(GetComponent<SpriteRenderer>()));
     }
 
     public void Death()

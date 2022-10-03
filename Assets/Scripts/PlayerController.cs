@@ -37,6 +37,14 @@ public class PlayerController : MonoBehaviour
     {
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");
+
+
+        if (Input.GetKeyDown("r"))
+        {
+            deathOverlay.RestartLevel();
+        }   
+
+
     }
 
     private void FixedUpdate()
